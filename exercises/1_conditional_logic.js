@@ -12,7 +12,21 @@ function paintMixer(color1, color2) {
   The order of the params should not matter.
   */
   // PLACE YOUR CODE BELOW
+  const normalizedColorCombo = [color1, color2].sort().join('_');
+  
+  // Make sure keys are alphabetized
+  const validColorCombos = {
+    "blue_red": `purple`,
+    "green_red": `brown`,
+    "blue_yellow": `green`,
+    "red_yellow": `orange`,
+  };
 
+  const invalidColorCombo = "unknown";
+
+  return (validColorCombos.hasOwnProperty(normalizedColorCombo))
+    ? validColorCombos[normalizedColorCombo] 
+    : invalidColorCombo;
   // PLACE YOUR CODE ABOVE
 }
 
